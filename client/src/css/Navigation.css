@@ -1,7 +1,96 @@
-nav {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100vw;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
+/* ==========================================
+   SMARTSWITCH CONFIGURATOR — NAVIGATION
+   ========================================== */
+
+#root nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  padding: 10px max(20px, calc((100% - 1000px) / 2));
+
+  background: rgba(4, 15, 35, 0.7);
+  border-bottom: 1px solid rgba(65, 180, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 12px rgba(0, 153, 255, 0.25),
+    0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+#root nav ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+#root nav li {
+  list-style: none;
+  padding: 0;
+}
+
+#root nav h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #83d7ff;
+  text-shadow: 0 0 12px rgba(0, 153, 255, 0.4);
+}
+
+#root nav a {
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+#root nav a:hover {
+  text-shadow: 0 0 12px rgba(0, 170, 255, 0.55);
+}
+
+#root nav a[role="button"] {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 640px) {
+  #root nav {
+    gap: 8px;
+    padding: 10px 16px;
+  }
+
+  #root nav h1 {
+    font-size: 1rem;
+  }
+
+  #root nav ul {
+    gap: 6px;
+  }
+
+  #root nav a[role="button"] {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root nav a {
+    transition: none;
+  }
 }

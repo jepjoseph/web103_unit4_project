@@ -1,66 +1,89 @@
-# WEB103 Project 4 - SmartHome Configurator
+# WEB103 Project 4 — SmartSwitch Configurator
 
 Submitted by: **Jean Pierre Joseph**
 
-About this web app: **SmartHome Configurator is a full-stack application for customizing smart-home devices. The first supported product will be a Smart Wall Switch, allowing users to select the finish, number of channels, connectivity, and energy monitoring features. The application is planned to provide a live visual preview, dynamic pricing, compatibility validation, and the ability to create, view, edit, and delete saved configurations. Future expansions may include Security Cameras, Smart Thermostats, and Smart Door Locks**
+**About this web app:** SmartSwitch Configurator is a full-stack web application that allows users to customize smart wall switches. Users can select the switch finish, number of channels, connectivity type, and energy monitoring capability. The application provides a live visual preview, dynamically calculates the price, validates incompatible configurations, and allows users to create, view, edit, and delete saved switches.
 
-Time spent: **TBD** hours
+**Time spent:** TBD hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-<!-- Make sure to check off completed functionality below -->
+- [x] The web app uses React to display data retrieved from the API.
+- [x] The web app connects to a PostgreSQL database with a structured `custom_items` table.
+  - [ ] The video walkthrough demonstrates the PostgreSQL database on the Render dashboard.
+  - [ ] The video walkthrough demonstrates the database records using `SELECT * FROM custom_items;`.
+- [x] Users can view multiple customizable features of a smart wall switch, including finish, channels, connectivity, and energy monitoring.
+- [x] Each customizable feature provides multiple options, where applicable.
+- [x] The switch's visual preview updates dynamically when users change its configuration.
+- [x] The total price updates automatically based on the selected options.
+- [x] The visual interface changes in response to the selected switch finish and number of channels.
+- [x] Users can save valid switch configurations to the PostgreSQL database.
+- [x] Invalid or incompatible configurations display appropriate error messages and are rejected.
+- [x] Users can view all saved switches.
+- [x] Users can edit previously saved switches.
+- [x] Users can delete saved switches.
+- [x] Users can update or delete saved switches from their detail pages.
 
-- [ ] **The web app uses React to display data from the API.**
-- [ ] **The web app is connected to a PostgreSQL database, with an appropriately structured `CustomItem` table.**
-  - [ ] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [ ] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT \* FROM tablename;' to display your table contents.**
-- [ ] **Users can view **multiple** features of the `CustomItem` (e.g. car) they can customize, (e.g. wheels, exterior, etc.)**
-- [ ] **Each customizable feature has multiple options to choose from (e.g. exterior could be red, blue, black, etc.)**
-- [ ] **On selecting each option, the displayed visual icon for the `CustomItem` updates to match the option the user chose.**
-- [ ] **The price of the `CustomItem` (e.g. car) changes dynamically as different options are selected _OR_ The app displays the total price of all features.**
-- [ ] **The visual interface changes in response to at least one customizable feature.**
-- [ ] **The user can submit their choices to save the item to the list of created `CustomItem`s.**
-- [ ] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
-- [ ] **Users can view a list of all submitted `CustomItem`s.**
-- [ ] **Users can edit a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
-- [ ] **Users can delete a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
-- [ ] **Users can update or delete `CustomItem`s that have been created from the detail page.**
+## Optional Features
 
-The following **optional** features are implemented:
+- [x] Incompatible feature combinations are identified before form submission, allowing users to correct their selections.
 
-- [ ] Selecting particular options prevents incompatible options from being selected even before form submission
+## Additional Features
 
-The following **additional** features are implemented:
+- [x] Custom SVG switch previews supporting multiple finishes and channel layouts.
+- [x] Responsive interface with dark-blue glassmorphism styling and cyan accents.
+- [x] Reusable configuration form for creating and editing switches.
+- [x] Server-side price calculation to maintain consistent saved prices.
+- [x] PostgreSQL constraints to protect data integrity.
+- [x] Error handling for failed API requests and invalid input.
+- [x] Database timestamps for saved configurations.
 
-- [ ] List anything else that you added to improve the site's functionality!
+## Technologies Used
+
+**Frontend:** React, JavaScript, HTML, CSS, Vite, React Router, Pico CSS
+
+**Backend:** Node.js, Express.js
+
+**Database:** PostgreSQL hosted on Render
+
+**Database integration:** `pg` (node-postgres)
+
+**API architecture:** RESTful API supporting CRUD operations
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+The video walkthrough will demonstrate:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+1. Creating a smart wall switch with different customization options.
+2. Updating the live preview and dynamically calculated price.
+3. Testing an incompatible configuration and observing the validation message.
+4. Saving a valid configuration.
+5. Viewing all saved switches.
+6. Opening a switch's details.
+7. Editing and deleting saved switches.
+8. Viewing the PostgreSQL database on Render.
+9. Running `SELECT * FROM custom_items;` to demonstrate saved database records.
 
-<!-- Replace this with whatever GIF tool you used! -->
-
-GIF created with ... GIF tool here
-
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+**Video/GIF:** To be added.
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+This project provided practical experience building a full-stack application with React, Express, and PostgreSQL.
+
+One important challenge was keeping the frontend configuration options and pricing consistent with the backend validation rules. The application addresses this by validating submitted configurations and calculating saved prices on the server.
+
+Another challenge was designing a live visual preview that responds to different finishes and channel counts. A reusable SVG-based switch preview was developed to represent the selected configuration.
+
+The project also involved configuring a remotely hosted PostgreSQL database, implementing CRUD operations, improving error handling, and designing a responsive user interface.
 
 ## License
 
 Copyright 2026 Jean Pierre Joseph
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
-> http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

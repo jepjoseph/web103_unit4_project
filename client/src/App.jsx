@@ -1,41 +1,39 @@
-import React from 'react'
-import { useRoutes } from 'react-router-dom'
-import Navigation from './components/Navigation'
-import ViewCars from './pages/ViewCars'
-import EditCar from './pages/EditCar'
-import CreateCar from './pages/CreateCar'
-import CarDetails from './pages/CarDetails'
-import './App.css'
+import { useRoutes } from "react-router-dom";
 
-const App = () => {
-  let element = useRoutes([
+import Navigation from "./components/Navigation";
+import CreateSwitch from "./pages/CreateSwitch";
+import ViewSwitches from "./pages/ViewSwitches";
+import SwitchDetails from "./pages/SwitchDetails";
+import EditSwitch from "./pages/EditSwitch";
+
+import "./App.css";
+
+function App() {
+  const element = useRoutes([
     {
-      path: '/',
-      element: <CreateCar title='BOLT BUCKET | Customize' />
+      path: "/",
+      element: <CreateSwitch />,
     },
     {
-      path:'/customcars',
-      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
+      path: "/switches",
+      element: <ViewSwitches />,
     },
     {
-      path: '/customcars/:id',
-      element: <CarDetails title='BOLT BUCKET | View' />
+      path: "/switches/:id",
+      element: <SwitchDetails />,
     },
     {
-      path: '/edit/:id',
-      element: <EditCar title='BOLT BUCKET | Edit' />
-    }
-  ])
+      path: "/switches/:id/edit",
+      element: <EditSwitch />,
+    },
+  ]);
 
   return (
-    <div className='app'>
-
+    <div className="app">
       <Navigation />
-
-      { element }
-
+      {element}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

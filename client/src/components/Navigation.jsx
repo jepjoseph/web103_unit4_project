@@ -1,21 +1,31 @@
-import React from 'react'
-import '../App.css'
-import '../css/Navigation.css'
+import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
-    return (
-        <nav>
-            <ul>
-                <li><h1>Bolt Bucket 🏎️</h1></li>
-            </ul>
+import "../css/Navigation.css";
 
-            <ul>
-                <li><a href='/' role='button'>Customize</a></li>
-                <li><a href='/customcars' role='button'>View Cars</a></li>
-            </ul>
-            
-        </nav>
-    )
+function Navigation() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <h1>SmartSwitch Configurator</h1>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <NavLink to="/" role="button">
+            Customize
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/switches" role="button">
+            My Switches
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
-export default Navigation
+export default Navigation;
