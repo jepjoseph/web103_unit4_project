@@ -12,8 +12,8 @@ The following **required** functionality is completed:
 
 - [x] The web app uses React to display data retrieved from the API.
 - [x] The web app connects to a PostgreSQL database with a structured `custom_items` table.
-  - [ ] The video walkthrough demonstrates the PostgreSQL database on the Render dashboard.
-  - [ ] The video walkthrough demonstrates the database records using `SELECT * FROM custom_items;`.
+  - [x] The video walkthrough demonstrates the PostgreSQL database on the Render dashboard.
+  - [x] The video walkthrough demonstrates the database records using `SELECT * FROM custom_items;`.
 - [x] Users can view multiple customizable features of a smart wall switch, including finish, channels, connectivity, and energy monitoring.
 - [x] Each customizable feature provides multiple options, where applicable.
 - [x] The switch's visual preview updates dynamically when users change its configuration.
@@ -33,12 +33,9 @@ The following **required** functionality is completed:
 ## Additional Features
 
 - [x] Custom SVG switch previews supporting multiple finishes and channel layouts.
-- [x] Responsive interface with dark-blue glassmorphism styling and cyan accents.
+- [x] Responsive interface with glassmorphism styling.
 - [x] Reusable configuration form for creating and editing switches.
 - [x] Server-side price calculation to maintain consistent saved prices.
-- [x] PostgreSQL constraints to protect data integrity.
-- [x] Error handling for failed API requests and invalid input.
-- [x] Database timestamps for saved configurations.
 
 ## Technologies Used
 
@@ -66,7 +63,12 @@ The video walkthrough will demonstrate:
 8. Viewing the PostgreSQL database on Render.
 9. Running `SELECT * FROM custom_items;` to demonstrate saved database records.
 
-**Video/GIF:** To be added.
+**Video/GIF:** 
+<img src='./client/src/assets/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='https://imgur.com/a/rbVKiFN' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with N-Studio
 
 ## Notes
 
